@@ -94,20 +94,7 @@ class ConvMLPS(nn.Module):
 
 
 def convmlp_s(num_classes=5, dim=64, **kwargs):
-    """
-    Load ConvMLP-S from custom implementation.
-    
-    VARIATION: Configurable dim parameter for model capacity
-    
-    Args:
-        num_classes: Number of output classes
-        dim: Base dimension (channels) - original: 64, variant: 96
-        **kwargs: Additional hyperparameters from config (safely ignored)
-    
-    Returns:
-        ConvMLP-S model ready for training
-    """
-    # Extract parameters (safely ignored if not present)
+
     _ = kwargs.pop('drop_path_rate', 0.1)
     
     # Remove any other unexpected kwargs

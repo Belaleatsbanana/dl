@@ -1,23 +1,3 @@
-# ConvMLP/config_variation.py
-"""
-ConvMLP-S Variation: Wider Channels (dim: 64 → 96)
-VARIATION: Increased model capacity for better feature learning
-
-Original Architecture:
-- dim = 64 (channels)
-- Total stages have 64 → 128 → 256 → 512 channels
-
-Variant Architecture:
-- dim = 96 (channels) 
-- Total stages have 96 → 192 → 384 → 768 channels
-- ~1.5x more parameters
-
-Rationale:
-The original ConvMLP-S plateaued early (peak at epoch 97).
-Increasing channel dimension gives model more capacity to learn
-complex food features, potentially improving accuracy.
-
-"""
 
 def get_config():
     return {
@@ -25,7 +5,7 @@ def get_config():
             'NAME': 'convmlp_s_v1',
             'TAG': 'MLP',
             'NUM_CLASSES': 5,
-            'DIM': 96,                       #  ONLY THIS IS DIFFERENT (64 → 96)
+            'DIM': 96,                    
             'DROP_PATH_RATE': 0.1,          
             'LABEL_SMOOTHING': 0.1,          
         },

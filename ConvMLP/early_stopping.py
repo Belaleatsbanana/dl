@@ -1,7 +1,3 @@
-# ConvMLP/early_stopping.py
-"""
-Early Stopping for ConvMLP models
-"""
 
 class ConvMLPEarlyStopping:
     """Early stopping to avoid overfitting"""
@@ -15,14 +11,7 @@ class ConvMLPEarlyStopping:
         self.delta = delta
 
     def __call__(self, val_acc, epoch):
-        """
-        Args:
-            val_acc: Validation accuracy
-            epoch: Current epoch
-            
-        Returns:
-            True if training should stop, False otherwise
-        """
+       
         score = val_acc
 
         if self.best_score is None:
