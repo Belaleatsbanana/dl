@@ -11,26 +11,11 @@ import torch.nn as nn
 import torchvision.models as models
 
 def densenet121(num_classes=5, freeze_backbone=False, **kwargs):
-    """
-    Load DenseNet-121 pre-trained on ImageNet and fine-tune for Food-101.
-    
-    SINGLE VARIATION: Frozen Backbone
-    - Original (freeze_backbone=False): All layers trainable (fine-tuning)
-    - Variation (freeze_backbone=True): Backbone frozen, only classifier trainable (transfer learning)
-    
-    Args:
-        num_classes: Number of output classes
-        freeze_backbone: If True, freeze all layers except classifier
-        **kwargs: Additional hyperparameters from config
-    
-    Accepts hyperparameters from config and applies them to the model:
-    - DROP_PATH_RATE controls dropout in the final classifier layer
-    - Enables proper hyperparameter tuning via config files
-    """
-    # Extract dropout rate from config (follows the standard naming convention)
+   
+  
     drop_rate = kwargs.pop('drop_path_rate', 0.1)
     
-    # Also support 'drop_rate' if specified
+   
     if 'drop_rate' in kwargs:
         drop_rate = kwargs.pop('drop_rate', drop_rate)
     

@@ -8,18 +8,6 @@ import torch.nn as nn
 import torchvision.models as models
 
 def resnet18(num_classes=5, **kwargs):
-    """
-    Load ResNet-18 pre-trained on ImageNet and fine-tune for Food-101.
-    
-    Args:
-        num_classes: Number of output classes (default: 5 for subset, 101 for full dataset)
-        **kwargs: Additional hyperparameters from config
-                 - drop_path_rate: Dropout rate (default: 0.1)
-    
-    Returns:
-        ResNet-18 model with modified classifier for Food-101
-    """
-    # Extract dropout rate from config
     drop_rate = kwargs.pop('drop_path_rate', 0.1)
     if 'drop_rate' in kwargs:
         drop_rate = kwargs.pop('drop_rate', drop_rate)

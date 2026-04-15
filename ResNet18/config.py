@@ -7,11 +7,10 @@ def get_config():
             'DROP_PATH_RATE': 0.1,
             'LABEL_SMOOTHING': 0.1,
             
-            # ResNet-18 specific parameters (standard defaults)
         },
         'DATA': {
-            'DATA_PATH': None,          # Use default from base config
-            'BATCH_SIZE': 64,           # Good batch size for ResNet
+            'DATA_PATH': None,         
+            'BATCH_SIZE': 64,          
             'NUM_WORKERS': None,
             'PIN_MEMORY': None,
         },

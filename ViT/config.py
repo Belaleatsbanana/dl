@@ -18,17 +18,17 @@ def get_config():
         },
         'DATA': {
             'DATA_PATH': None,
-            'BATCH_SIZE': 32,           # Smaller batch for transformer (memory intensive)
+            'BATCH_SIZE': 32,           
             'NUM_WORKERS': None,
             'PIN_MEMORY': None,
         },
         'TRAIN': {
             'START_EPOCH': None,
             'EPOCHS': 50,
-            'BASE_LR': 1e-3,            # ViT needs careful learning rate tuning
+            'BASE_LR': 1e-3,            
             'WEIGHT_DECAY': 0.05,
             'CLIP_GRAD': 1.0,
-            'WARMUP_EPOCHS': 20,        # Long warmup for transformers
+            'WARMUP_EPOCHS': 20,       
             'WARMUP_LR': 1e-6,
             'MIN_LR': 1e-5,
             'OPT': 'adamw',

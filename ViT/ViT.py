@@ -52,10 +52,7 @@ class TransformerBlock(nn.Module):
 
 
 class VisionTransformer(nn.Module):
-    """
-    Vision Transformer (ViT) for image classification.
-    Treats image as a sequence of patches and applies transformer encoder.
-    """
+
     def __init__(self, img_size=224, patch_size=16, in_chans=3, num_classes=5,
                  embed_dim=768, depth=12, num_heads=12, mlp_ratio=4., 
                  drop_path_rate=0.1, **kwargs):
@@ -124,9 +121,7 @@ class VisionTransformer(nn.Module):
 
 
 def vit_base(num_classes=5, **kwargs):
-    """
-    Vision Transformer Base variant for Food-101.
-    """
+    
     model = VisionTransformer(
         img_size=kwargs.pop('img_size', 224),
         patch_size=kwargs.pop('patch_size', 16),
